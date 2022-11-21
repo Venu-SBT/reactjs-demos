@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
@@ -9,6 +9,11 @@ import PageNotFound from './components/pages/PageNotFound';
 import Dashboard from './components/pages/Dashboard';
 import Login from './components/pages/Login';
 import Logout from './components/pages/Logout';
+
+// Step 1 : Add Lazy loading
+// const Contact = React.lazy(() => import('./components/pages/Contact'));
+
+// Step 2 : Wrap Routes component with  <Suspense fallback={<h1>Loading...</h1>}> 
 
 function App1() {
   let isLoggedIn = true;
